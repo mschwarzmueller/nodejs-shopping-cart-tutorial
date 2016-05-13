@@ -12,6 +12,7 @@
     "express": "~4.13.1",
     "express-handlebars": "^3.0.0",
     "hbs": "~3.1.0",
+    "mongoose": "^4.4.16",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
   }
