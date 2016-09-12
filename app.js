@@ -7,12 +7,15 @@ var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
 var mongoose = require('mongoose');
 var session = require('express-session');
+var passport = require('passport');
+var flash = require('connect-flash');
 
 var routes = require('./routes/index');
 
 var app = express();
 
 mongoose.connect('127.0.0.1:27017/shopping');
+require('./config/passport');
 
 // view engine setup
 app.engine('.hbs', expressHbs({
@@ -34,6 +37,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
