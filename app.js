@@ -9,7 +9,6 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('passport');
 var flash = require('connect-flash');
-
 var routes = require('./routes/index');
 
 var app = express();
@@ -23,9 +22,7 @@ app.engine('.hbs', expressHbs({
   extname: '.hbs'
 }));
 app.set('view engine', '.hbs');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
