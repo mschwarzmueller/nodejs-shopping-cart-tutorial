@@ -24,5 +24,8 @@
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.3.0",
     "stripe": "^4.7.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.5.2"
   }
 }
