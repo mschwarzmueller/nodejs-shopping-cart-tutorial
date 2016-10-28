@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Brand</a>
+            <a class="navbar-brand" href="/">Página Inicial</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -16,20 +16,20 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/shopping-cart/">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrinho de Compras
                         <span class="badge">{{session.cart.totalQty}}</span>
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> User Management <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Menu de Usuário <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         {{# if login }}
-                            <li><a href="/user/profile">User Account</a></li>
+                            <li><a href="/user/profile">Perfil de Usuário</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="/user/logout">Logout</a></li>
+                            <li><a href="/user/logout">Sair</a></li>
                         {{ else }}
-                            <li><a href="/user/signup">Sign up</a></li>
-                            <li><a href="/user/signin">Sign in</a></li>
+                            <li><a href="/user/signup">Criar Conta</a></li>
+                            <li><a href="/user/signin">Entrar</a></li>
                         {{/if}}
 
                     </ul>
