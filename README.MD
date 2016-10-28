@@ -1,3 +1,5 @@
-## Tutorial on How to Build a Shopping Cart with NodeJS/ Express
+[![Build Status](https://travis-ci.org/brenohq/nodejs-shopping-cart.svg?branch=master)](https://travis-ci.org/brenohq/nodejs-shopping-cart)
 
-This repository holds the source code of my YouTube series on how to create a shopping cart with NodeJS/Express/MongoDB
+## A simple Shopping Cart with NodeJS/ Express
+
+Project created for student purposes, under MIT License.
