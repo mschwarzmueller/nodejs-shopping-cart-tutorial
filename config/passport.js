@@ -19,6 +19,7 @@ passport.use('local.signup', new LocalStrategy({
 }, function (req, email, password, done) {
     req.checkBody('email', 'Invalid email').notEmpty().isEmail();
     req.checkBody('password', 'Invalid password').notEmpty().isLength({min:4});
+
     var errors = req.validationErrors();
     if (errors) {
         var messages = [];
@@ -35,6 +36,9 @@ passport.use('local.signup', new LocalStrategy({
             return done(null, false, {message: 'Email is already in use.'});
         }
         var newUser = new User();
+        newUser.name = req.body.name;
+        newUser.city = req.body.city;
+        newUser.state = req.body.state;
         newUser.email = email;
         newUser.password = newUser.encryptPassword(password);
         newUser.save(function(err, result) {

@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
         for (var i = 0; i < docs.length; i += chunkSize) {
             productChunks.push(docs.slice(i, i + chunkSize));
         }
-        res.render('shop/index', {title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessages: !successMsg});
+        res.render('shop/index', {title: 'Carrinho de Compra', products: productChunks, successMsg: successMsg, noMessages: !successMsg});
     });
 });
 
@@ -96,7 +96,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
             paymentId: charge.id
         });
         order.save(function(err, result) {
-            req.flash('success', 'Successfully bought product!');
+            req.flash('success', 'Compra realizada com sucesso!');
             req.session.cart = null;
             res.redirect('/');
         });
