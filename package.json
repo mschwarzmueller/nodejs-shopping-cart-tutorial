@@ -6,9 +6,9 @@
 //  "postinstall": "npm start",
     "test": "jasmine"
   },
-  // "engines": {
-  //   "node": "4.1.1"
-  // },
+  "engines": {
+    "node": "7.2.1"
+  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.13.2",
