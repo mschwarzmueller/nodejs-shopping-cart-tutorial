@@ -1,40 +1,53 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <h1>Perfil de Usuário</h1>
-        <hr>
+        <br>
 
         <div class="panel panel-default">
             <div class="panel-body">
                 <h3>Dados Pessoais</h3>
+                <br><br>
+
                 <form class="form-horizontal">
+
                     {{#if user}}
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="name">Nome:</label>
+                        <label class="control-label col-sm-2" for="name">Nome</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="name" placeholder="" value="{{this.user.name}}">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Email:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="email" placeholder="" value="{{this.user.email}}">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="city">Cidade:</label>
+                        <label class="control-label col-sm-2" for="city">Cidade</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="city" placeholder="" value="{{this.user.city}}">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="state">Estado:</label>
+                        <label class="control-label col-sm-2" for="state">Estado</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="state" placeholder="" value="{{this.user.state}}">
                         </div>
                     </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="email" placeholder="" value="{{this.user.email}}">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="password">Senha</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="password" name="password" class="form-control">
+                        </div>
+                    </div>
+
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
@@ -42,6 +55,7 @@
                         </div>
                     </div>
                     {{/if}}
+
                 </form>
 
             </div>
@@ -52,6 +66,7 @@
 
                 <div class="panel-body">
                     <h3>Minhas Compras</h3>
+                    <hr>
                     <ul class="list-group">
                         {{# each this.items }}
                             <li class="list-group-item">
