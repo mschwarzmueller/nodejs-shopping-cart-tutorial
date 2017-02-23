@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Cart = require('../models/cart');
+var User = require('../models/user');
 
 var Product = require('../models/product');
 var Order = require('../models/order');
@@ -67,24 +68,6 @@ router.get('/shopping-cart', function(req, res, next) {
     products: cart.generateArray(),
     totalPrice: cart.totalPrice
   });
-});
-
-router.post('/updateProfile', isLoggedIn, function(req, res, next) {
-  if (!req.session.cart) {
-    return res.redirect('/shopping-cart');
-  }
-
-  var user = new User(req.session.user);
-  console.log(user);
-
-//   var errMsg = req.flash('error')[0];
-//   res.render('shop/checkout', {
-//     total: cart.totalPrice,
-//     errMsg: errMsg,
-//     noError: !errMsg
-//   });
-
-
 });
 
 router.get('/checkout', isLoggedIn, function(req, res, next) {
