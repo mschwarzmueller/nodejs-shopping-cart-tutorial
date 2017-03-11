@@ -1,44 +1,39 @@
-var Product = require('../models/product.js');
+var Product = require('../models/product');
+
 var mongoose = require('mongoose');
 
-mongoose.connect('127.0.0.1:27017/shopping');
+mongoose.connect('localhost:27017/shopping');
 
 var products = [
     new Product({
         imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
-        title: 'Gothic',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida condimentum urna vitae viverra. Phasellus eleifend nunc sit amet ipsum tristique posuere. Donec ullamcorper consectetur odio, aliquam imperdiet massa dictum ac. Praesent faucibus porttitor felis, quis feugiat urna iaculis vel. Duis a ipsum erat. In pretium velit at tellus faucibus vehicula. Morbi bibendum varius mauris, eu viverra leo accumsan at. ',
-        price: 25
-    }),
-    new Product({
-        imagePath: 'http://vignette3.wikia.nocookie.net/gtawiki/images/0/0c/OneTrueSlash.jpg/revision/latest?cb=20140116163503',
-        title: 'Grant Theft Auto V',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida condimentum urna vitae viverra. Phasellus eleifend nunc sit amet ipsum tristique posuere. Donec ullamcorper consectetur odio, aliquam imperdiet massa dictum ac. Praesent faucibus porttitor felis, quis feugiat urna iaculis vel. Duis a ipsum erat. In pretium velit at tellus faucibus vehicula. Morbi bibendum varius mauris, eu viverra leo accumsan at. ',
-        price: 20
-    }),
-    new Product({
-        imagePath: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg',
-        title: 'The Witcher 3',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida condimentum urna vitae viverra. Phasellus eleifend nunc sit amet ipsum tristique posuere. Donec ullamcorper consectetur odio, aliquam imperdiet massa dictum ac. Praesent faucibus porttitor felis, quis feugiat urna iaculis vel. Duis a ipsum erat. In pretium velit at tellus faucibus vehicula. Morbi bibendum varius mauris, eu viverra leo accumsan at. ',
+        title: 'Gothic Video Game',
+        description: 'Awesome Game!!!!',
         price: 10
     }),
     new Product({
-        imagePath: 'https://upload.wikimedia.org/wikipedia/en/2/20/StarCraft_II_-_Box_Art.jpg',
-        title: 'StarCraft 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida condimentum urna vitae viverra. Phasellus eleifend nunc sit amet ipsum tristique posuere. Donec ullamcorper consectetur odio, aliquam imperdiet massa dictum ac. Praesent faucibus porttitor felis, quis feugiat urna iaculis vel. Duis a ipsum erat. In pretium velit at tellus faucibus vehicula. Morbi bibendum varius mauris, eu viverra leo accumsan at. ',
+        imagePath: 'http://eu.blizzard.com/static/_images/games/wow/wallpapers/wall2/wall2-1440x900.jpg',
+        title: 'World of Warcraft Video Game',
+        description: 'Also awesome? But of course it was better in vanilla ...',
+        price: 20
+    }),
+    new Product({
+        imagePath: 'https://support.activision.com/servlet/servlet.FileDownload?file=00PU000000Rq6tz',
+        title: 'Call of Duty Video Game',
+        description: 'Meh ... nah, it\'s okay I guess',
+        price: 40
+    }),
+    new Product({
+        imagePath: 'https://pmcdeadline2.files.wordpress.com/2014/02/minecraft__140227211000.jpg',
+        title: 'Minecraft Video Game',
+        description: 'Now that is super awesome!',
         price: 15
     }),
     new Product({
-        imagePath: 'https://upload.wikimedia.org/wikipedia/en/2/29/World_of_Warcraft_-_The_Burning_Crusade_coverart.jpg',
-        title: 'World of Warcraft',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida condimentum urna vitae viverra. Phasellus eleifend nunc sit amet ipsum tristique posuere. Donec ullamcorper consectetur odio, aliquam imperdiet massa dictum ac. Praesent faucibus porttitor felis, quis feugiat urna iaculis vel. Duis a ipsum erat. In pretium velit at tellus faucibus vehicula. Morbi bibendum varius mauris, eu viverra leo accumsan at. ',
-        price: 80
-    }),
-    new Product({
-        imagePath: 'http://netdna.webdesignerdepot.com/uploads/2011/02/jurassicpark.jpg',
-        title: 'Jurassic Park',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida condimentum urna vitae viverra. Phasellus eleifend nunc sit amet ipsum tristique posuere. Donec ullamcorper consectetur odio, aliquam imperdiet massa dictum ac. Praesent faucibus porttitor felis, quis feugiat urna iaculis vel. Duis a ipsum erat. In pretium velit at tellus faucibus vehicula. Morbi bibendum varius mauris, eu viverra leo accumsan at. ',
-        price: 100
+        imagePath: 'https://d1r7xvmnymv7kg.cloudfront.net/sites_products/darksouls3/assets/img/DARKSOUL_facebook_mini.jpg',
+        title: 'Dark Souls 3 Video Game',
+        description: 'I died!',
+        price: 50
     })
 ];
 
