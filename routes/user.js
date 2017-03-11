@@ -9,6 +9,19 @@ var User = require('../models/user');
 
 var csrfProtection = csrf();
 
+router.post('/removeUser', function(req, res, next) {
+  User.findOneAndRemove({email: req.user.email}, function(err, success) {
+    if(err) {
+      console.log(err.message);
+      req.flash('error', 'Falha ao remover usuário!');
+    }
+    if(success) {
+      req.flash('success', 'Usuário removido com sucesso!');
+      res.redirect('/');
+    }
+  });
+});
+
 router.use(csrfProtection);
 
 router.get('/profile', isLoggedIn, function(req, res, next) {
@@ -33,8 +46,6 @@ router.get('/profile', isLoggedIn, function(req, res, next) {
 
 router.post('/profile', function(req, res, next) {
 
-  console.log('Bateu na rota com req: ', req.body);
-
   if (req.body.email) {
     User.findOne({
       email: req.body.email
@@ -44,8 +55,6 @@ router.post('/profile', function(req, res, next) {
         req.flash('error', 'falhou')
         console.log(err);
       }
-
-      console.log(doc);
 
       doc.email = req.body.email;
       doc.name = req.body.name;
@@ -59,44 +68,6 @@ router.post('/profile', function(req, res, next) {
     console.log("email inválido");
   }
 
-  // User.findOne({
-  //   email: req.body.email
-  // }, (err, user) => {
-
-  //   console.log("Deu merda:", err);
-  //   console.log("Usuário: ", user);
-
-  //   // if (err) return res.end(' @@@@@@@@@@@@@@@@@@2 DEU BOSTA @@@@@@@@@@@@@@@@@@@@!');
-
-  //   if (!err) {
-
-  //     console.log('SEM ERROS!!');
-
-  //     for (var id in req.body) {
-  //       user[id] = req.body[id];
-  //     }
-
-  //     console.log('SEM ERROS 2!!');
-  //     user.update(function(err) {
-
-  //       console.log('SEM ERROS 3!!');
-
-  //       if (err) {
-  //         req.flash('error', 'Falha ao atualizar cadastro!');
-  //         console.log(err);
-  //         // res.end()
-  //       }
-
-  //       // return res.redirect();
-
-  //       // return res.send({
-  //       //   // _id: res._id,
-  //       //   // alias: res.alias
-  //       // });
-  //     });
-  //   }
-  // });
-
   if (req.session.oldUrl) {
     var oldUrl = req.session.oldUrl;
     req.session.oldUrl = null;
@@ -108,32 +79,6 @@ router.post('/profile', function(req, res, next) {
   res.end();
 
 });
-
-// router.post('/updateProfile', function(req, res, next) {
-//   console.log(2312);
-
-//   var user = new User(req.session.user);
-//   console.log(user);
-
-//   var errMsg = req.flash('error')[0];
-//   res.redirect('user/profile');
-
-// });
-
-// router.post('/updateProfile', passport.authenticate('local.updateProfile', {
-//   failureRedirect: '/user/signup',
-//   failureFlash: true
-// }), function(req, res, next) {
-//   console.log('tey');
-
-//   if (req.session.oldUrl) {
-//     var oldUrl = req.session.oldUrl;
-//     req.session.oldUrl = null;
-//     res.redirect(oldUrl);
-//   } else {
-//     res.redirect('/user/profile');
-//   }
-// });
 
 router.get('/logout', isLoggedIn, function(req, res, next) {
   req.logout();
