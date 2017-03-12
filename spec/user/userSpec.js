@@ -1,11 +1,15 @@
-const Cart = require('../../models/cart');
+const User = require('../../models/user');
+let user;
 
-describe('Cart Suite', function() {
-  var cart = new Cart({});
+describe('User Suite', () => {
 
-  it('should return empty array', function() {
-    expect(cart.generateArray()).toEqual([]);
+  beforeEach(() => {
+    user = new User();
+    user.password = 'senhaTeste';
   });
 
+  it('should encrypt password', () => {
+    expect(user.encryptPassword(user.password)).toContain('$2a$05');
+  });
   
 });
