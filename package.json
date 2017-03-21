@@ -29,6 +29,8 @@
     "stripe": "^4.7.0"
   },
   "devDependencies": {
-    "jasmine": "^2.5.2"
+    "chai": "^3.5.0",
+    "jasmine": "^2.5.2",
+    "mocha-mongoose": "^1.2.0"
   }
 }
