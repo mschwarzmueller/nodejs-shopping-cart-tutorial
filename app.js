@@ -17,7 +17,7 @@ var userRoutes = require('./routes/user');
 
 var app = express();
 
-mongoose.connect('localhost:27017/shopping');
+mongoose.connect(process.env.MONGO_DB_URI);
 require('./config/passport');
 
 // view engine setup
