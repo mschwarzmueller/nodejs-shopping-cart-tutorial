@@ -1,8 +1,8 @@
-const dbURI = 'mongodb://localhost:27017/shopping';
+const dbURI = process.env.MONGO_DB_URI;
 const should = require('chai').should();
 const mongoose = require('mongoose');
 
-const User = require('../../models/user');
+var User = require('../../models/user');
 
 describe('User Suite', () => {
 
