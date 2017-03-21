@@ -3,3 +3,4 @@ node_js:
   - 'v7.2.1'
 before_script:
   - ""
+services: mongodb
