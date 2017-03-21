@@ -2,7 +2,8 @@
   "name": "shopping-cart",
   "version": "0.0.2",
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
     "test": "jasmine"
   },
   "engines": {
@@ -29,6 +30,7 @@
     "stripe": "^4.7.0"
   },
   "devDependencies": {
+    "nodemon": "^1.11.0",
     "chai": "^3.5.0",
     "jasmine": "^2.5.2",
     "mocha-mongoose": "^1.2.0"
