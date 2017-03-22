@@ -24,12 +24,14 @@ With your mongod service running, just run
 ``` shell
     npm run dev
 ```
-Tests
+
+With this the app will be running (with nodemon) at http://localhost:3000
+
+
+### Tests
 ``` shell
     npm test
 ```
-
-With this the app will be running (with nodemon) at http://localhost:3000
 
 ### Technologies
 ###### Back-end
