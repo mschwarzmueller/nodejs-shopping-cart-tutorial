@@ -21,6 +21,7 @@ describe('User Suite', () => {
 describe("Deve testar o Usuario no banco de dados: ", function() {
 
   beforeEach(function(done) {
+    mongoose.Promise = global.Promise;
     if (mongoose.connection.db) return done();
     mongoose.connect(dbURI, done);
   });
