@@ -20,13 +20,16 @@ Install dependencies
 ``` shell
     npm install
 ```
-With your mongod service running, just run
+
+With your mongod service running:
+This will populate your database
+``` shell
+    node seed/product-seeder.js 
+```
+This will start dev server at http://localhost:3000 with Nodemon.
 ``` shell
     npm run dev
 ```
-
-With this the app will be running (with nodemon) at http://localhost:3000
-
 
 ### Tests
 ``` shell
@@ -38,5 +41,3 @@ With this the app will be running (with nodemon) at http://localhost:3000
 NodeJS, Express, MongoDB, Mongoose. 
 ###### Fron-end
 Handlebars and Bootstrap.
-
-
