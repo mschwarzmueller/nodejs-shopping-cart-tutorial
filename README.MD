@@ -20,9 +20,7 @@ Install dependencies
 ``` shell
     npm install
 ```
-
-With your mongod service running:
-This will populate your database
+With your mongod service running, this will populate shopping database
 ``` shell
     node seed/product-seeder.js 
 ```
