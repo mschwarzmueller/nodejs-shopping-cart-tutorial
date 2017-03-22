@@ -38,5 +38,3 @@ With this the app will be running (with nodemon) at http://localhost:3000
 NodeJS, Express, MongoDB, Mongoose. 
 ###### Fron-end
 Handlebars and Bootstrap.
-
-
