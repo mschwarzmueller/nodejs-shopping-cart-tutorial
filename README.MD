@@ -1,29 +1,40 @@
 [![Build Status](https://travis-ci.org/brenohq/nodejs-shopping-cart.svg?branch=master)](https://travis-ci.org/brenohq/nodejs-shopping-cart)
 
 # NerdStore - Carrinho de Compras - NodeJS/Express
-#### Tecnologias Usadas
-###### Back-end
-Nosso back-end roda em NodeJS 7.2.1, usando Express.js para a criação de rotas. 
-Nosso banco de dados é o MongoDB, usando o Moongoose para gerenciar os Schemas que serão salvos no BD.
 
-###### Fron-end
-Nosso front-end foi construído com Handlebars.js, uma engine para criação de templates mais semânticos.
+# Live Demo on Heroku:
+[nodejs-shopping-cart.herokuapp.com](https://nodejs-shopping-cart.herokuapp.com/)
 
-###### Testes Unitários
-Nossa suite de testes foi feita utilizando o Jasmine.
+### Run Locally on Your Machine
+You need Node, NPM and MongoDB properly installed.
 
-###### Outros Recursos
-Além dessas tecnologias, também usamos Stripe para verificação de cartões de crédito, Passport para autenticação, BCrypt para encriptação da senha no back-end, dentre outros.
-
-#### Instalação
-Para rodar essa aplicação em sua máquina, você deve ter NodeJS e MongoDB instalados em sua máquina. Com isso basta navegar até a pasta do projeto e rodar esses dois comandos.
-
-Instala as dependências do projeto:
+Clone this repository
+``` shell
+    git clone https://github.com/brenohq/nodejs-shopping-cart.git
+```
+Setup the environment variables replacing <MONGODB-PORT> with your mongodb port, usually is 27017.
+``` shell
+    export MONGO_DB_URI=mongodb://localhost:<MONGODB-PORT>/shopping
+```
+Install dependencies
 ``` shell
     npm install
 ```
-Roda o script de start da aplicação:
+With your mongod service running, just run
 ``` shell
-    npm start
+    npm run dev
 ```
+Tests
+``` shell
+    npm test
+```
+
+With this the app will be running (with nodemon) at http://localhost:3000
+
+### Technologies
+###### Back-end
+NodeJS, Express, MongoDB, Mongoose. 
+###### Fron-end
+Handlebars and Bootstrap.
+
 
