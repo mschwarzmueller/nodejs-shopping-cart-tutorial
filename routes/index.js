@@ -34,7 +34,6 @@ router.get('/add-to-cart/:id', function(req, res, next) {
     }
     cart.add(product, product.id);
     req.session.cart = cart;
-    // console.log(req.session.cart);
     res.redirect('/');
   });
 });
@@ -89,9 +88,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
   }
   var cart = new Cart(req.session.cart);
 
-  var stripe = require("stripe")(
-    "sk_test_bgBdBuFAydIEVdepmjpaJKUy"
-  );
+  var stripe = require("stripe")("sk_test_bgBdBuFAydIEVdepmjpaJKUy");
 
   stripe.charges.create({
     amount: cart.totalPrice * 100,
@@ -100,7 +97,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
     description: "Test Charge"
   }, function(err, charge) {
     if (err) {
-      req.flash('error', err.message);
+      req.flash('error', 'Não conseguimos finalizar sua compra!');
       return res.redirect('/checkout');
     }
     var order = new Order({
