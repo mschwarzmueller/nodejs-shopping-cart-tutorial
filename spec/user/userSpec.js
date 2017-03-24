@@ -14,8 +14,7 @@ describe("User test suite", () => {
   });
 
   it('should encrypt the password.', () => {
-    let user;
-    user = new User();
+    let user = new User();
     user.password = 'senhaTeste';
     expect(user.encryptPassword(user.password)).toContain('$2a$05');
   });
@@ -40,11 +39,8 @@ describe("User test suite", () => {
     const newUser = new User(mockedUser);
 
     newUser.password = newUser.encryptPassword('senhaTeste');
-
     newUser.save((err, result) => {
-      if (err) {
-        return done(err);
-      }
+      if (err) return done(err);
       return done(null, newUser);
     });
   });
