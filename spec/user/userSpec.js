@@ -4,36 +4,32 @@ const mongoose = require('mongoose');
 
 var User = require('../../models/user');
 
-describe('User Suite', () => {
+describe("User test suite", () => {
 
-  let user;
-  beforeEach(() => {
-    user = new User();
-    user.password = 'senhaTeste';
-  });
-
-  it('should encrypt password', () => {
-    expect(user.encryptPassword(user.password)).toContain('$2a$05');
-  });
-
-});
-
-describe("Deve testar o Usuario no banco de dados: ", function() {
-
-  beforeEach(function(done) {
+  beforeEach((done) => {
     mongoose.Promise = global.Promise;
+
     if (mongoose.connection.db) return done();
     mongoose.connect(dbURI, done);
   });
 
-  it("está removendo!", function(done) {
-    User.find({
-      email: 'brenosc2@hotmail.com'
-    }).remove().exec();
-    return done();
+  it('should encrypt the password.', () => {
+    let user;
+    user = new User();
+    user.password = 'senhaTeste';
+    expect(user.encryptPassword(user.password)).toContain('$2a$05');
   });
 
-  it("está salvando!", function(done) {
+  it("should remove from database", (done) => {
+    User.findOneAndRemove({
+      email: 'brenosc2@hotmail.com'
+    }, (err, data) => {
+      if (err) return done(err);
+      return done();
+    });
+  });
+
+  it("should save on the database", (done) => {
     const mockedUser = {
       name: 'Breno Henrique',
       city: 'Itaguara',
@@ -41,11 +37,11 @@ describe("Deve testar o Usuario no banco de dados: ", function() {
       email: 'brenosc2@hotmail.com',
       password: 'senhaTeste'
     }
-
     const newUser = new User(mockedUser);
+
     newUser.password = newUser.encryptPassword('senhaTeste');
 
-    newUser.save(function(err, result) {
+    newUser.save((err, result) => {
       if (err) {
         return done(err);
       }

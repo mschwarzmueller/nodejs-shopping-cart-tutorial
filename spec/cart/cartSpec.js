@@ -4,7 +4,7 @@ const Product = require('../../models/product');
 let cart;
 let product;
 
-describe('Cart Suite', () => {
+describe('Cart test suite', () => {
 
   beforeEach(() => {
     cart = new Cart({});
