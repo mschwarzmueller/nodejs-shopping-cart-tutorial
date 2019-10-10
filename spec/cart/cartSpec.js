@@ -1,17 +1,15 @@
-const Cart = require('../../models/cart');
-const Product = require('../../models/product');
+const Cart = require("../../models/cart")
+const Product = require("../../models/product")
 
-let cart;
-let product;
+let cart
+let product
 
-describe('Cart test suite', () => {
-
+describe("Cart test suite", () => {
   beforeEach(() => {
-    cart = new Cart({});
-  });
+    cart = new Cart({})
+  })
 
-  it('should return empty array', () => {
-    expect(cart.generateArray()).toEqual([]);
-  });
-  
-});
+  it("should return empty array", () => {
+    expect(cart.generateArray()).toEqual([])
+  })
+})
