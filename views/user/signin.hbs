@@ -2,11 +2,11 @@
     <div class="col-md-4 col-md-offset-4">
         <h1>Entrar</h1></br>
         {{#if hasErrors}}
-            <div class="alert alert-danger">
-                {{# each messages }}
-                    <p>{{this}}</p>
-                {{/each}}
-            </div>
+        <div class="alert alert-danger">
+            {{# each messages }}
+            <p>{{this}}</p>
+            {{/each}}
+        </div>
         {{/if}}
         <form action="/user/signin" method="post">
             <div class="form-group">

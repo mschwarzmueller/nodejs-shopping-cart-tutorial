@@ -14,21 +14,24 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Nome</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{ this.user.name }}">
+                            <input type="text" class="form-control" id="name" name="name" placeholder=""
+                                value="{{ this.user.name }}">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="city">Cidade</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="city" name="city" placeholder="" value="{{this.user.city}}">
+                            <input type="text" class="form-control" id="city" name="city" placeholder=""
+                                value="{{this.user.city}}">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="state">Estado</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="state" name="state" placeholder="" value="{{this.user.state}}">
+                            <input type="text" class="form-control" id="state" name="state" placeholder=""
+                                value="{{this.user.state}}">
                         </div>
                     </div>
 
@@ -36,7 +39,8 @@
                     <div class="form-group hidden">
                         <label class="control-label col-sm-2" for="email">Email</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="email" name="email" placeholder="" value="{{this.user.email}}">
+                            <input type="text" class="form-control" id="email" name="email" placeholder=""
+                                value="{{this.user.email}}">
                         </div>
                     </div>
 
@@ -47,7 +51,7 @@
                             <input type="password" id="password" name="password" class="form-control">
                         </div>
                     </div>
-                    
+
                     <button type="submit" class="btn btn-success">Atualizar Cadastro</button>
 
                     <input type="hidden" name="_csrf" value="{{ csrfToken }}">
@@ -57,32 +61,32 @@
             <div class="panel-body">
 
                 <form class="form-horizontal form" action="/user/removeUser" method="POST">
-                        <button type="submit" class="btn btn-danger">Apagar Minha Conta</button>
+                    <button type="submit" class="btn btn-danger">Apagar Minha Conta</button>
                 </form>
 
             </div>
         </div>
 
         {{# each orders }}
-            <div class="panel panel-default">
+        <div class="panel panel-default">
 
-                <div class="panel-body">
-                    <h3>Minhas Compras</h3>
-                    <hr>
-                    <ul class="list-group">
-                        {{# each this.items }}
-                            <li class="list-group-item">
-                                <span class="badge">{{ this.price }}</span> {{ this.item.title }} | {{ this.qty }} Unidade(s)
-                            </li>
-                        {{/each}}
-                    </ul>
-                </div>
-
-                <div class="panel-footer">
-                    <strong>Valor Total: R${{ this.cart.totalPrice }}</strong>
-                </div>
-
+            <div class="panel-body">
+                <h3>Minhas Compras</h3>
+                <hr>
+                <ul class="list-group">
+                    {{# each this.items }}
+                    <li class="list-group-item">
+                        <span class="badge">{{ this.price }}</span> {{ this.item.title }} | {{ this.qty }} Unidade(s)
+                    </li>
+                    {{/each}}
+                </ul>
             </div>
+
+            <div class="panel-footer">
+                <strong>Valor Total: R${{ this.cart.totalPrice }}</strong>
+            </div>
+
+        </div>
         {{/each}}
     </div>
 </div>
