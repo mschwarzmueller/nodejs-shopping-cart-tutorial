@@ -2,7 +2,7 @@ var Product = require("../models/product")
 
 var mongoose = require("mongoose")
 
-mongoose.connect(process.env.MONGO_DB_URI)
+mongoose.connect(process.env.MONGO_DB_URI, { useMongoClient: true })
 
 var products = [
   new Product({

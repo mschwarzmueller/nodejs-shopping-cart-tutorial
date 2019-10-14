@@ -9,7 +9,7 @@ describe("User test suite", () => {
     mongoose.Promise = global.Promise
 
     if (mongoose.connection.db) return done()
-    mongoose.connect(dbURI, done)
+    mongoose.connect(dbURI, { useMongoClient: true }, done)
   })
 
   it("should encrypt the password.", () => {
