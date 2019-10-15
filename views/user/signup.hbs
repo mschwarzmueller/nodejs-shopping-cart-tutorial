@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Criar Conta</h1></br>
+
+        {{#if hasErrors}}
+        <div class="alert alert-danger">
+            {{# each messages }}
+            <p>{{this}}</p>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <form action="/user/signup" method="post">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="city">Cidade</label>
+                <input type="text" id="city" name="city" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="state">Estado</label>
+                <input type="text" id="state" name="state" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="text" id="email" name="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" class="form-control">
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            </br>
+
+            <button type="submit" class="btn btn-primary">Criar</button>
+        </form>
+
+    </div>
+</div>
